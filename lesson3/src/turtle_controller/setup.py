@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'turtle_circle = turtle_controller.turtle_circle:main',
             'turtle_pose_sub = turtle_controller.turtle_pose_sub:main',
+            'turtle_follower = turtle_controller.turtle_follower:main',
         ],
     },
 )
