@@ -26,7 +26,12 @@
 - **文档**: [lesson2/lesson2.md](lesson2/lesson2.md)
 - **代码**: [turtle_circle.py](lesson2/src/turtle_controller/turtle_controller/turtle_circle.py)
 
-### Lesson 3: 更新中
+### Lesson 3: 订阅者节点与海龟状态监控
+- **主题**: 创建ROS2订阅者节点
+- **内容**: 订阅者模式、Pose消息、回调函数、频率控制
+- **技能**: 监控海龟实时状态，掌握消息接收处理
+- **文档**: [lesson3/lesson3.md](lesson3/lesson3.md)
+- **代码**: [turtle_pose_sub.py](lesson3/src/turtle_controller/turtle_controller/turtle_pose_sub.py)
 
 
 ## 🛠️ 环境要求
@@ -34,7 +39,6 @@
 ### 系统要求
 - **操作系统**: Ubuntu 22.04 LTS (推荐)
 - **ROS2版本**: Humble Hawksbill
-- **Python版本**: 3.10+
 
 ### 依赖安装
 ```bash
@@ -95,6 +99,25 @@ ros2 run turtlesim turtlesim_node
 ros2 run turtle_controller turtle_circle
 ```
 
+#### Lesson 3 - 海龟状态监控
+```bash
+# 进入lesson3目录
+cd lesson3
+
+# 编译项目
+colcon build
+source install/setup.bash
+
+# 启动turtlesim（终端1）
+ros2 run turtlesim turtlesim_node
+
+# 运行圆形控制节点（终端2）
+ros2 run turtle_controller turtle_circle
+
+# 运行状态监控节点（终端3）
+ros2 run turtle_controller turtle_pose_sub
+```
+
 ## 📖 学习建议
 
 ### 学习顺序
@@ -141,7 +164,14 @@ ros2_learn/
 ├── lesson2/
 │   ├── lesson2.md               # 第二课教程
 │   ├── src/
-│   │   └── turtle_controller/   # ROS2包
+│   │   └── turtle_controller/   # ROS2包（发布者）
+│   ├── build/                   # 编译输出（忽略）
+│   ├── install/                 # 安装目录（忽略）
+│   └── log/                     # 日志目录（忽略）
+├── lesson3/
+│   ├── lesson3.md               # 第三课教程
+│   ├── src/
+│   │   └── turtle_controller/   # ROS2包（订阅者）
 │   ├── build/                   # 编译输出（忽略）
 │   ├── install/                 # 安装目录（忽略）
 │   └── log/                     # 日志目录（忽略）
